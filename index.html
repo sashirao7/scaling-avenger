@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body ng-app="myapp">
+  <div ng-controller="MainController">
+    <button ng-show="nameList.length === 0" ng-click="fetchList();">Get List</button>
+    
+    <div ng-show="nameList.length > 0">
+      <ul>
+        <li ng-repeat="names in nameList" ng-click="displayStatus(names.details);">{{names.name}}</li>
+      </ul>
+    </div>
+    
+    <div>{{detailText}}</div>
+  </div>
+</body>
+
+</html>
